@@ -22,11 +22,14 @@ function closeModalBtn()
 function renderCat()
 {
     const catObject = getCat()
-    modalContainerEl.style.display = 'flex'
-    document.getElementById("modal-inner").innerHTML =
-    `
-        <image class="modal-cat-image" src="images/${catObject.image}">
-    `
+    if(catObject)
+    {
+        modalContainerEl.style.display = 'flex'
+        document.getElementById("modal-inner").innerHTML =
+        `
+            <image class="modal-cat-image" src="images/${catObject.image}">
+        `
+    }
 }
 
 function getCat()
